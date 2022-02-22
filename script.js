@@ -1,5 +1,3 @@
-
-
 let btns = document.querySelectorAll(".num-button");
 let allBtns = document.querySelectorAll(".button");
 let resultBox = document.querySelector("#result-box");
@@ -12,16 +10,17 @@ let allBtnSpread = [...allBtns];
 
 // For Number Inputs
 btnSpread.forEach((button, i) => {
-  button.addEventListener("click", () => {
-    // Inner Values for calculator
+    button.addEventListener("click", () => {
 
-    if (resultBox.innerHTML == "0") {
-      resultBox.innerHTML = "";
-    }
+        // Inner Values for calculator
 
-    let value = btns[i].innerHTML;
-    resultBox.innerHTML += value;
-  });
+        if (resultBox.value == "0") {
+            resultBox.value = "";
+        }
+
+        let value = btns[i].innerHTML;
+        resultBox.value += value;
+    });
 });
 
 
@@ -31,16 +30,15 @@ function evaluate(fn) {
 }
 
 // To calculate All Input
-total.addEventListener('click', ()=> {
-let allInputs = resultBox.innerHTML;
+total.addEventListener('click', () => {
+    let allInputs = resultBox.value;
 
-resultBox.innerHTML = evaluate(allInputs);
+    resultBox.value = evaluate(allInputs);
 
-console.log(evaluate(allInputs));
+    console.log(evaluate(allInputs));
 })
 
 // Clear all Inputs
-clearBtn.addEventListener('click', ()=> {
-    resultBox.innerHTML = "0";
+clearBtn.addEventListener('click', () => {
+    resultBox.value = "0";
 })
- 
