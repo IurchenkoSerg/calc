@@ -11,15 +11,14 @@ let allBtnSpread = [...allBtns];
 // For Number Inputs
 btnSpread.forEach((button, i) => {
     button.addEventListener("click", () => {
-
         // Inner Values for calculator
 
-        if (resultBox.value == "0") {
-            resultBox.value = "";
+        if (resultBox.innerHTML == "0") {
+            resultBox.innerHTML = "";
         }
 
         let value = btns[i].innerHTML;
-        resultBox.value += value;
+        resultBox.innerHTML += value;
     });
 });
 
@@ -31,14 +30,14 @@ function evaluate(fn) {
 
 // To calculate All Input
 total.addEventListener('click', () => {
-    let allInputs = resultBox.value;
+    let allInputs = resultBox.innerHTML;
 
-    resultBox.value = evaluate(allInputs);
+    resultBox.innerHTML = evaluate(allInputs);
 
     console.log(evaluate(allInputs));
 })
 
 // Clear all Inputs
 clearBtn.addEventListener('click', () => {
-    resultBox.value = "0";
+    resultBox.innerHTML = "0";
 })
