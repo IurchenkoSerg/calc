@@ -13,9 +13,9 @@ btnSpread.forEach((button, i) => {
     button.addEventListener("click", () => {
         // Inner Values for calculator
 
-        if (resultBox.innerHTML == "0") {
-            resultBox.innerHTML = "";
-        }
+        // if (resultBox.innerHTML == "0") {
+        //     resultBox.innerHTML = "";
+        // }
 
         let value = btns[i].innerHTML;
         resultBox.innerHTML += value;
